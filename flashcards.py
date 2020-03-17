@@ -1,5 +1,6 @@
 from flask import Flask, render_template
 from datetime import datetime
+from datareader import db
 
 app = Flask(__name__)
 counter = 0
@@ -7,8 +8,16 @@ counter = 0
 
 @app.route("/")
 def welcome_template():
-    return render_template("welcome.html")
+    return render_template("welcome.html",
+                           message="Wassssssaaaaap!!!"
+                           )
 
+@app.route("/card")
+def card_view():
+    card = db[0]
+    return render_template("card.html",
+                           card=card
+                           )
 
 @app.route("/welcome")
 def welcome():
