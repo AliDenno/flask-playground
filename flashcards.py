@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, render_template
 from datetime import datetime
 
 app = Flask(__name__)
@@ -6,6 +6,11 @@ counter = 0
 
 
 @app.route("/")
+def welcome_template():
+    return render_template("welcome.html")
+
+
+@app.route("/welcome")
 def welcome():
     return "Welcome to my Flash Cards Application!"
 
