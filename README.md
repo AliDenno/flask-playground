@@ -9,7 +9,7 @@
     $ export FLASK_APP=flashcards.py 
     $ export FLASK_ENV=development 
     $ flask run
-      or
+    # or
     $ python –m flask run 
    ```
    -For windows, use set instead of export-
@@ -32,8 +32,8 @@
     $ pip3 install -r requirements.txt
     $ sudo apt install gunicorn3
     $ gunicorn3 -D flashcards:app
-    now the deamon is running on port 8000
-    we need to use nginx tp have a reverse proxy
+    # now the deamon is running on port 8000
+    # we need to use nginx tp have a reverse proxy
     $ cd /etc/nginx/sites-available/
     get settings from : https://gunicorn.org/#deployment
     change server_name and access_log 
