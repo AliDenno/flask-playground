@@ -35,8 +35,8 @@
     # now the deamon is running on port 8000
     # we need to use nginx tp have a reverse proxy
     $ cd /etc/nginx/sites-available/
-    get settings from : https://gunicorn.org/#deployment
-    change server_name and access_log 
+    # get settings from : https://gunicorn.org/#deployment
+    # change server_name and access_log 
     $ sudo nano default 
       server {
           listen 80;
