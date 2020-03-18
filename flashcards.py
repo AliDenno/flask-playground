@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, abort
 from datetime import datetime
 from datareader import db
 
@@ -18,6 +18,21 @@ def card_view():
     return render_template("card.html",
                            card=card
                            )
+
+
+@app.route("/card/<int:index>")
+def card_view_index(index):
+    try:
+        card = db[index]
+        return render_template("card.html",
+                               card=card,
+                               index=index,
+                               max_index=len(db)-1
+                               )
+    except IndexError:
+        abort(404)
+
+
 
 @app.route("/welcome")
 def welcome():
