@@ -9,7 +9,8 @@ counter = 0
 @app.route("/")
 def welcome_template():
     return render_template("welcome.html",
-                           message="Wassssssaaaaap!!!"
+                           message="Wassssssaaaaap!!!",
+                           cards=db
                            )
 
 @app.route("/card")
