@@ -60,7 +60,7 @@ def add_card():
                 "answer": request.form['answer']}
         db.append(card)
         save_db()
-        return redirect(url_for('card_view', index=len(db) - 1))
+        return redirect(url_for('card_view_index', index=len(db) - 1))
     else:
         return render_template("add_card.html")
 
